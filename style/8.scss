@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+@import "8v.scss";
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface");
+
+
+body {
+  @include text-size-adjust;
+  margin: 0px;
+  padding: 0px;
+  font-family: $serif-font-family;
+  font-feature-settings: "palt" 1, "pkna" 1;
+  line-height: 1;
+  background-color: black;
+}
+
+
+div.main {
+  margin: 0px;
+  padding: 100px 0px;
+  background: $page-background;
+
+  div.header {
+    width: 1000px;
+    margin: 0px auto 0px auto;
+    padding: 0px;
+  }
+
+  div.header div.title {
+    margin: 0px;
+    padding: 0px;
+    font-family: $special-font-family;
+    font-size: 120px;
+    color: hsla(0, 100%, 100%, 0.5);
+    filter: drop-shadow(0px 2px 3px hsla(0, 100%, 100%, 0.5));
+  }
+
+  div.header div.caption {
+    margin: 20px 0px 0px 0px;
+    padding: 0px;
+    font-family: $shaleian-font-family;
+    font-size: 30px;
+    color: hsla(0, 100%, 100%, 0.3);
+  }
+
+  div.header div.caption span {
+    display: inline-block;
+  }
+
+  div.card {
+    width: 1000px;
+    margin: 80px auto 0px auto;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  div.card div.item {
+    margin: 0px;
+    padding: 0px;
+    border-radius: $item-border-radius;
+    filter: drop-shadow(0px 4px 6px hsla(0, 100%, 100%, 0.5));
+  }
+
+  div.card div.item:hover {
+    cursor: pointer;
+  }
+
+  div.card div.item#course {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  div.card div.item#database {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  div.card div.item#translation {
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  div.card div.item#work {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  div.card div.item#theory {
+    grid-row: 1;
+    grid-column: 3;
+  }
+
+  div.card div.item#diary {
+    grid-row: 2;
+    grid-column: 3;
+  }
+
+  div.card div.item div.title {
+    height: $item-header-height;
+    margin: 0px;
+    padding: 0px 25px;
+    border-radius: $item-border-radius $item-border-radius 0px 0px;
+    background-color: hsla($secondary-hue, 100%, 90%, 0.6);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  div.card div.item:hover div.title {
+    background-color: hsla($hovered-hue, 100%, 90%, 0.8);
+  }
+
+  div.card div.item div.title div.japanese {
+    margin: 0px;
+    padding: 0px;
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  div.card div.item div.title div.shaleian {
+    margin: 0px;
+    padding: 0px;
+    font-family: $shaleian-font-family;
+    font-size: 24px;
+    color: hsla(0, 100%, 100%, 0.3);
+    position: absolute;
+    bottom: 5px;
+    z-index: 1;
+  }
+
+  div.card div.item div.explanation {
+    height: calc(100% - #{$item-header-height});
+    margin: 0px;
+    padding: 15px 25px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    border-radius: 0px 0px $item-border-radius $item-border-radius;
+    background-color: hsla(0, 100%, 100%, 0.4);
+    box-sizing: border-box;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  div.card div.item:hover div.explanation {
+    background-color: hsla(0, 100%, 100%, 0.6);
+  }
+
+}

@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+@function stripe-gradient($first-color, $second-color, $angle, $space) {
+  @return repeating-linear-gradient($angle, $first-color $space, $second-color $space, $second-color $space * 2, $first-color $space * 2, $first-color $space * 3, $second-color $space * 3);
+}
+
+
+$primary-hue: 230;
+$secondary-hue: 200;
+$hovered-hue: 110;
+
+$page-background-color: hsl($primary-hue, 20%, 20%);
+$light-page-background-color: hsl($primary-hue, 20%, 21%);
+
+$page-background: stripe-gradient($page-background-color, $light-page-background-color, -45deg, 10px);
+
+$item-border-radius: 10px;
+
+$item-header-height: 50px;
+
+$serif-font-family: "Times New Roman", "Times", "IPA P明朝", "IPAex明朝", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+$shaleian-font-family: "Gilit";
+$special-font-family: "Abril Fatface";
+
+
+@mixin text-size-adjust {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
