@@ -39,8 +39,8 @@ div.main {
     padding: 0px;
     font-family: $special-font-family;
     font-size: 120px;
-    color: rgba($title-color, 0.4);
-    filter: drop-shadow(0px 2px 3px rgba($title-color, 0.4));
+    color: $title-color;
+    filter: $title-filter;
   }
 
   div.header div.caption {
@@ -48,7 +48,7 @@ div.main {
     padding: 0px;
     font-family: $gilit-font-family;
     font-size: 30px;
-    color: rgba($title-color, 0.3);
+    color: $caption-color;
   }
 
   div.header div.caption span {
@@ -76,7 +76,7 @@ div.main {
     margin: 0px;
     padding: 0px;
     border-radius: $card-border-radius;
-    filter: drop-shadow(0px 4px 6px rgba($card-background-color, 0.4));
+    filter: $box-filter;
   }
 
   div.card div.item:hover {
@@ -118,7 +118,7 @@ div.main {
     margin: 0px;
     padding: 0px 25px;
     border-radius: $card-border-radius $card-border-radius 0px 0px;
-    background-color: rgba($card-header-background-color, 0.6);
+    background-color: $card-header-background-color;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -129,7 +129,7 @@ div.main {
   }
 
   div.card div.item:hover div.title {
-    background-color: rgba($hovered-card-header-background-color, 0.75);
+    background-color: multiply-alpha($hovered-card-header-background-color, 1.25);
   }
 
   div.card div.item div.title div.japanese {
@@ -159,13 +159,13 @@ div.main {
     line-height: 1.6;
     text-align: justify;
     border-radius: 0px 0px $card-border-radius $card-border-radius;
-    background-color: rgba($card-background-color, 0.4);
+    background-color: $card-background-color;
     box-sizing: border-box;
     transition: background-color 0.2s ease-in-out;
   }
 
   div.card div.item:hover div.explanation {
-    background-color: rgba($card-background-color, 0.5);
+    background-color: multiply-alpha($card-background-color, 1.25);
   }
 
   div.arrow {
@@ -181,8 +181,8 @@ div.introduction {
   margin: 0px;
   padding: 0px;
   border: 1px transparent solid;
-  background: rgba($introduction-background, 0.6);
-  filter: drop-shadow(0px 4px 6px rgba($card-background-color, 0.4));
+  background: $introduction-background;
+  filter: $box-filter;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -202,7 +202,7 @@ div.introduction {
     font-family: $serif-font-family;
     font-size: 52px;
     color: $introduction-header-color;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     position: absolute;
     top: 0px;
   }
@@ -210,7 +210,7 @@ div.introduction {
   div.header div.shaleian {
     font-family: $gilit-font-family;
     font-size: 40px;
-    color: rgba($introduction-header-color, 0.2);
+    color: multiply-alpha($introduction-header-color, 0.2);
     position: absolute;
     bottom: 0px;
     z-index: 1;
@@ -235,7 +235,7 @@ div.introduction {
   }
 
   div.content div.explanation p {
-    margin: 10px 0px;
+    margin: 15px 0px;
     padding: 0px;
     font-size: 18px;
     line-height: 1.8;
@@ -256,11 +256,11 @@ div.introduction {
   }
 
   div.content div.sample p {
-    margin: 10px 0px;
+    margin: 15px 0px;
     padding: 0px;
     font-family: $vekos-font-family;
     font-size: 22px;
-    color: rgba($sample-color, 0.6);
+    color: $sample-color;
     line-height: 1.5;
     text-align: justify;
   }

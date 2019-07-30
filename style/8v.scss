@@ -4,30 +4,38 @@
   @return repeating-linear-gradient($angle, $first-color $space, $second-color $space, $second-color $space * 2, $first-color $space * 2, $first-color $space * 3, $second-color $space * 3);
 }
 
+@function multiply-alpha($color, $ratio) {
+  $new-alpha: alpha($color) * $ratio;
+  @return rgba($color, $new-alpha);
+}
+
 
 $primary-hue: 230;
 $secondary-hue: 200;
 $hovered-hue: 110;
 
-$main-background-color: hsl($primary-hue, 20%, 20%);
-$light-main-background-color: hsl($primary-hue, 20%, 21%);
+$main-background: stripe-gradient(hsl($primary-hue, 30%, 25%), hsl($primary-hue, 30%, 26%), -45deg, 10px);
+$introduction-background: hsla($secondary-hue, 100%, 90%, 0.6);
 
-$main-background: stripe-gradient($main-background-color, $light-main-background-color, -45deg, 10px);
-$introduction-background: hsl($secondary-hue, 100%, 90%);
+$card-background-color: rgba(white, 0.4);
+$card-header-background-color: hsla($secondary-hue, 100%, 90%, 0.6);
+$hovered-card-header-background-color: hsla($hovered-hue, 90%, 90%, 0.6);
 
-$card-background-color: white;
-$card-header-background-color: hsl($secondary-hue, 100%, 90%);
-$hovered-card-header-background-color: hsl($hovered-hue, 100%, 90%);
+$title-color: rgba(white, 0.4);
+$caption-color: rgba(white, 0.3);
+$introduction-header-color: hsl($primary-hue, 30%, 35%);
+$sample-color: rgba(white, 0.6);
 
-$title-color: white;
-$introduction-header-color: hsl($primary-hue, 50%, 30%);
-$sample-color: white;
-
+$scrollbar-thumb-border-radius: 8px;
 $card-border-radius: 10px;
 $sample-border-radius: 10px;
 
+$scrollbar-size: 10px;
 $main-width: 1200px;
 $card-header-height: 50px;
+
+$title-filter: drop-shadow(0px 2px 3px rgba($title-color, 0.4));
+$box-filter: drop-shadow(0px 4px 6px rgba($card-background-color, 0.4));
 
 $serif-font-family: "Times New Roman", "Times", "IPA P明朝", "IPAex明朝", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
 $vekos-font-family: "Vekos Web";
