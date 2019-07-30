@@ -19,11 +19,27 @@ $item-border-radius: 10px;
 $item-header-height: 50px;
 
 $serif-font-family: "Times New Roman", "Times", "IPA P明朝", "IPAex明朝", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
-$shaleian-font-family: "Gilit";
+$vekos-font-family: "Vekos Web";
+$gilit-font-family: "Gilit Web";
 $special-font-family: "Abril Fatface";
 
 
 @mixin text-size-adjust {
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+
+
+@font-face {
+  font-family: $vekos-font-family;
+  src: url("../material/font/7.woff") format("woff"), url("../material/font/7.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $gilit-font-family;
+  src: url("../material/font/8.woff") format("woff"), url("../material/font/8.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
