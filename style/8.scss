@@ -169,7 +169,21 @@ div.main {
   }
 
   div.arrow {
-    height: 100px;
+    @include no-shrink($arrow-height);
+    margin: 0px;
+    padding: 0px;
+    height: $arrow-height;
+  }
+
+  div.arrow div.tip {
+    margin: 0px auto;
+    margin-top: ($arrow-height - $tip-size) / 2;
+    padding: 0px;
+    width: 0px;
+    height: 0px;
+    border: $tip-size solid;
+    border-color: $introduction-background transparent transparent transparent;
+    filter: $small-box-filter;
   }
 
 }
@@ -188,14 +202,12 @@ div.introduction {
   flex-direction: column;
 
   div.header {
+    @include no-shrink(65px);
     width: $main-width;
     height: 65px;
     margin: 100px auto 0px auto;
     padding: 0px;
     position: relative;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 65px;
   }
 
   div.header div.japanese {
@@ -217,11 +229,9 @@ div.introduction {
   }
 
   div.content {
+    @include shrink(100vh);
     margin: 0px;
     padding: 0px;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: 100vh;
     display: flex;
     align-items: center;
   }
@@ -266,7 +276,10 @@ div.introduction {
   }
 
   div.arrow {
-    height: 100px;
+    @include no-shrink($arrow-height);
+    margin: 0px;
+    padding: 0px;
+    height: $arrow-height;
   }
 
 }
