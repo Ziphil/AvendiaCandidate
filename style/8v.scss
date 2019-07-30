@@ -9,15 +9,25 @@ $primary-hue: 230;
 $secondary-hue: 200;
 $hovered-hue: 110;
 
-$page-background-color: hsl($primary-hue, 20%, 20%);
-$light-page-background-color: hsl($primary-hue, 20%, 21%);
+$main-background-color: hsl($primary-hue, 20%, 20%);
+$light-main-background-color: hsl($primary-hue, 20%, 21%);
 
-$page-background: stripe-gradient($page-background-color, $light-page-background-color, -45deg, 10px);
+$main-background: stripe-gradient($main-background-color, $light-main-background-color, -45deg, 10px);
+$introduction-background: hsl($secondary-hue, 100%, 90%);
 
-$item-border-radius: 10px;
+$card-background-color: white;
+$card-header-background-color: hsl($secondary-hue, 100%, 90%);
+$hovered-card-header-background-color: hsl($hovered-hue, 100%, 90%);
+
+$title-color: white;
+$introduction-header-color: hsl($primary-hue, 50%, 30%);
+$sample-color: white;
+
+$card-border-radius: 10px;
+$sample-border-radius: 10px;
 
 $main-width: 1200px;
-$item-header-height: 50px;
+$card-header-height: 50px;
 
 $serif-font-family: "Times New Roman", "Times", "IPA P明朝", "IPAex明朝", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
 $vekos-font-family: "Vekos Web";
