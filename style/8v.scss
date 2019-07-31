@@ -10,6 +10,11 @@
   @return rgba($color, $new-alpha);
 }
 
+@function adjust($size) {
+  $new-size: 100vw * $size / 1920px;
+  @return $new-size;
+}
+
 
 // 基本色相
 $primary-hue: 230;
