@@ -17,7 +17,7 @@ body {
 }
 
 
-div.main {
+div.top {
   @include transparent-border;
   width: 100%;
   height: 100vh;
@@ -39,7 +39,7 @@ div.main {
     margin: 0px;
     padding: 0px;
     font-family: $special-font-family;
-    font-size: 120px;
+    font-size: $title-font-size;
     color: $title-color;
     filter: $title-filter;
   }
@@ -48,7 +48,7 @@ div.main {
     margin: 20px 0px 0px 0px;
     padding: 0px;
     font-family: $gilit-font-family;
-    font-size: 30px;
+    font-size: $caption-font-size;
     color: $caption-color;
   }
 
@@ -68,58 +68,62 @@ div.main {
   div.card {
     width: $main-width;
     margin: 0px auto 0px auto;
+    padding: 0px;
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  div.card div.item {
+  div.card a.item {
     margin: 0px;
     padding: 0px;
+    color: $card-color;
+    text-decoration: none;
     border-radius: $card-border-radius;
     filter: $box-filter;
+    display: block;
   }
 
-  div.card div.item:hover {
+  div.card a.item:hover {
     cursor: pointer;
   }
 
-  div.card div.item#course {
+  div.card a.item#course {
     grid-row: 1;
     grid-column: 1;
   }
 
-  div.card div.item#database {
+  div.card a.item#database {
     grid-row: 2;
     grid-column: 1;
   }
 
-  div.card div.item#translation {
+  div.card a.item#translation {
     grid-row: 1;
     grid-column: 2;
   }
 
-  div.card div.item#work {
+  div.card a.item#work {
     grid-row: 2;
     grid-column: 2;
   }
 
-  div.card div.item#theory {
+  div.card a.item#theory {
     grid-row: 1;
     grid-column: 3;
   }
 
-  div.card div.item#diary {
+  div.card a.item#diary {
     grid-row: 2;
     grid-column: 3;
   }
 
-  div.card div.item div.title {
-    height: $card-header-height;
+  div.card a.item div.title {
+    height: $card-title-height;
     margin: 0px;
     padding: 0px 25px;
     border-radius: $card-border-radius $card-border-radius 0px 0px;
-    background-color: $card-header-background-color;
+    background-color: $card-title-background-color;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -129,35 +133,36 @@ div.main {
     transition: background-color 0.2s ease-in-out;
   }
 
-  div.card div.item:hover div.title {
+  div.card a.item:hover div.title {
     background-color: multiply-alpha($hovered-card-header-background-color, 1.25);
   }
 
-  div.card div.item div.title div.japanese {
+  div.card a.item div.title div.japanese {
     margin: 0px;
     padding: 0px;
-    font-size: 24px;
+    font-size: $card-title-font-size;
+    color: $card-title-color;
     position: relative;
     z-index: 2;
   }
 
-  div.card div.item div.title div.shaleian {
+  div.card a.item div.title div.shaleian {
     margin: 0px;
     padding: 0px;
     font-family: $gilit-font-family;
-    font-size: 24px;
-    color: rgba(white, 0.3);
+    font-size: $card-title-font-size;
+    color: $card-title-shaleian-color;
     position: absolute;
     bottom: 5px;
     z-index: 1;
   }
 
-  div.card div.item div.explanation {
-    height: calc(100% - #{$card-header-height});
+  div.card a.item div.explanation {
+    height: calc(100% - #{$card-title-height});
     margin: 0px;
     padding: 15px 25px;
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: $font-size;
+    line-height: $line-height;
     text-align: justify;
     border-radius: 0px 0px $card-border-radius $card-border-radius;
     background-color: $card-background-color;
@@ -165,7 +170,7 @@ div.main {
     transition: background-color 0.2s ease-in-out;
   }
 
-  div.card div.item:hover div.explanation {
+  div.card a.item:hover div.explanation {
     background-color: multiply-alpha($card-background-color, 1.25);
   }
 
@@ -183,7 +188,7 @@ div.main {
     width: 0px;
     height: 0px;
     border: $tip-size solid;
-    border-color: $introduction-background transparent transparent transparent;
+    border-color: $introduction-background-color transparent transparent transparent;
     filter: $small-box-filter;
   }
 
@@ -196,7 +201,7 @@ div.introduction {
   height: 100vh;
   margin: 0px;
   padding: 0px;
-  background: $introduction-background;
+  background: $introduction-background-color;
   filter: $box-filter;
   box-sizing: border-box;
   display: flex;
@@ -249,9 +254,9 @@ div.introduction {
   div.content div.explanation p {
     margin: 15px 0px;
     padding: 0px;
-    font-size: 18px;
+    font-size: $font-size;
     color: $explanation-color;
-    line-height: 1.8;
+    line-height: $explanation-line-height;
     text-align: justify;
   }
 
@@ -274,7 +279,7 @@ div.introduction {
     font-family: $vekos-font-family;
     font-size: 22px;
     color: $sample-color;
-    line-height: 1.5;
+    line-height: $sample-line-height;
     text-align: justify;
   }
 
@@ -354,7 +359,7 @@ div.other {
     font-size: 64px;
     text-decoration: none;
     text-align: center;
-    color: $card-header-background-color;
+    color: $card-title-background-color;
     filter: $small-box-filter;
     transition: color 0.2s ease-in-out;
   }
@@ -378,9 +383,9 @@ div.other {
   div.content div.contact div.table div.row div.explanation {
     margin: 0px 0px 0px 20px;
     padding: 0px; 
-    font-size: 18px;
+    font-size: $font-size;
     color: $other-color;
-    line-height: 1.6;
+    line-height: $line-height;
   }
 
   div.content div.log {
@@ -392,9 +397,9 @@ div.other {
   div.content div.log >ul {
     margin: 0px 0px 100px 0px;
     padding: 0px;
-    font-size: 18px;
+    font-size: $font-size;
     color: $other-color;
-    line-height: 1.6;
+    line-height: $line-height;
     list-style-type: none;
   }
 
