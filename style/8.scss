@@ -204,17 +204,13 @@ div.top {
 div.introduction {
   @include transparent-border;
   width: 100%;
-  height: 100vh;
   margin: 0px;
   padding: 0px;
   background: $introduction-background-color;
   filter: $box-filter;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
 
   div.header {
-    @include no-shrink(65px);
     width: $main-width;
     height: $introduction-header-font-size * 1.3;
     margin: 100px auto 0px auto;
@@ -245,8 +241,7 @@ div.introduction {
   }
 
   div.content {
-    @include shrink(100vh);
-    margin: 0px;
+    margin: 80px 0px 100px 0px;
     padding: 0px;
     display: flex;
     align-items: center;
@@ -275,8 +270,8 @@ div.introduction {
   div.content div.sample {
     margin: 0px;
     padding: 0px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     padding-left: 50px;
     padding-right: calc((100% - #{$main-width}) / 2);
     border-radius: $sample-border-radius 0px 0px $sample-border-radius;

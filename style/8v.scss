@@ -138,7 +138,7 @@ $list-icon-font-family: "List Icon";
 
 @mixin transparent-border {
   border-top: 1px transparent solid;
-  border-botom: 1px transparent solid;
+  border-bottom: 1px transparent solid;
   border-left: 0px;
   border-right: 0px;
 }
