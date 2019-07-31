@@ -16,6 +16,8 @@ $secondary-hue: 200;
 $hovered-hue: 110;
 
 $main-background: stripe-gradient(hsl($primary-hue, 30%, 25%), hsl($primary-hue, 30%, 26%), -45deg, 10px);
+$scrollbar-background: hsl($primary-hue, 30%, 25%);
+$scrollbar-thumb-background: hsla($secondary-hue, 100%, 90%, 0.6);
 $introduction-background: hsla($secondary-hue, 100%, 90%, 0.6);
 
 $card-background-color: rgba(white, 0.4);
@@ -57,9 +59,19 @@ $footer-icon-font-family: "Footer Icon";
 $list-icon-font-family: "List Icon";
 
 
-@mixin text-size-adjust {
-  text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+@mixin no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+  &::-webkit-scrollbar-corner {
+    display: none;
+  }
 }
 
 @mixin shrink($height) {
@@ -72,6 +84,18 @@ $list-icon-font-family: "List Icon";
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: $height;
+}
+
+@mixin transparent-border {
+  border-top: 1px transparent solid;
+  border-botom: 1px transparent solid;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+@mixin text-size-adjust {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 
