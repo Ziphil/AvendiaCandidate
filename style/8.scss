@@ -353,10 +353,10 @@ div.other {
   }
 
   div.content div.contact div.table div.row a.icon {
-    width: 64px;
-    height: 64px;
+    width: $icon-font-size;
+    height: $icon-font-size;
     font-family: $footer-icon-font-family;
-    font-size: 64px;
+    font-size: $icon-font-size;
     text-decoration: none;
     text-align: center;
     color: $card-title-background-color;
