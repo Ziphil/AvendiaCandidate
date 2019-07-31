@@ -80,6 +80,7 @@ $sample-border-radius: 10px;
 
 // 大きさ > 全体
 $main-width: 1200px;
+$small-main-width: 90vw;
 // 大きさ > カード
 $card-title-height: 50px;
 // 大きさ > 矢印エリア
@@ -140,6 +141,12 @@ $list-icon-font-family: "List Icon";
 @mixin text-size-adjust {
   text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+}
+
+@mixin small-screen {
+  @media screen and (max-width: $main-width / 0.9) {
+    @content;
+  }
 }
 
 

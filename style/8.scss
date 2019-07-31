@@ -33,6 +33,9 @@ div.top {
     width: $main-width;
     margin: 100px auto 0px auto;
     padding: 0px;
+    @include small-screen {
+      width: $small-main-width;
+    }
   }
 
   div.header div.title {
@@ -72,6 +75,9 @@ div.top {
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(3, 1fr);
+    @include small-screen {
+      width: $small-main-width;
+    }
   }
 
   div.card a.item {
@@ -214,6 +220,9 @@ div.introduction {
     margin: 100px auto 0px auto;
     padding: 0px;
     position: relative;
+    @include small-screen {
+      width: $small-main-width;
+    }
   }
 
   div.header div.japanese {
@@ -249,6 +258,9 @@ div.introduction {
     margin-right: 50px;
     padding: 0px;
     flex: 5;
+    @include small-screen {
+      margin-left: calc((100% - #{$small-main-width}) / 2);
+    }
   }
 
   div.content div.explanation p {
@@ -263,14 +275,17 @@ div.introduction {
   div.content div.sample {
     margin: 0px;
     padding: 0px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     padding-left: 50px;
     padding-right: calc((100% - #{$main-width}) / 2);
     border-radius: $sample-border-radius 0px 0px $sample-border-radius;
     background: $main-background;
     background-attachment: fixed;
     flex: 4;
+    @include small-screen {
+      padding-right: calc((100% - #{$small-main-width}) / 2);
+    }
   }
 
   div.content div.sample p {
@@ -306,6 +321,9 @@ div.other {
     width: $main-width;
     margin: 100px auto 0px auto;
     display: flex;
+    @include small-screen {
+      width: $small-main-width;
+    }
   }
 
   div.content div.column div.header {
