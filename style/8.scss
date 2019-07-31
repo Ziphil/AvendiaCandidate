@@ -204,7 +204,7 @@ div.introduction {
   div.header {
     @include no-shrink(65px);
     width: $main-width;
-    height: 65px;
+    height: $introduction-header-font-size * 1.3;
     margin: 100px auto 0px auto;
     padding: 0px;
     position: relative;
@@ -212,16 +212,17 @@ div.introduction {
 
   div.header div.japanese {
     font-family: $serif-font-family;
-    font-size: 52px;
+    font-size: $introduction-header-font-size;
     color: $introduction-header-color;
     letter-spacing: 0.15em;
     position: absolute;
     top: 0px;
+    z-index: 2;
   }
 
   div.header div.shaleian {
     font-family: $gilit-font-family;
-    font-size: 40px;
+    font-size: $introduction-header-font-size * 0.8;
     color: multiply-alpha($introduction-header-color, 0.2);
     position: absolute;
     bottom: 0px;
@@ -248,6 +249,7 @@ div.introduction {
     margin: 15px 0px;
     padding: 0px;
     font-size: 18px;
+    color: $explanation-color;
     line-height: 1.8;
     text-align: justify;
   }
@@ -280,6 +282,164 @@ div.introduction {
     margin: 0px;
     padding: 0px;
     height: $arrow-height;
+  }
+
+}
+
+
+div.other {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 1px transparent solid;
+  background: transparent;
+  background-attachment: fixed;
+  box-sizing: border-box;
+
+  div.content {
+    width: $main-width;
+    margin: 100px auto 0px auto;
+    display: flex;
+  }
+
+  div.content div.column div.header {
+    height: $other-header-font-size * 1.3;
+    margin: 0px auto 30px auto;
+    padding: 0px;
+    position: relative;
+  }
+
+  div.content div.column div.header div.japanese {
+    font-family: $serif-font-family;
+    font-size: $other-header-font-size;
+    color: $other-header-color;
+    letter-spacing: 0.15em;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+  }
+
+  div.content div.column div.header div.shaleian {
+    font-family: $gilit-font-family;
+    font-size: $other-header-font-size * 0.8;
+    color: multiply-alpha($other-header-color, 0.2);
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+  }
+
+  div.content div.contact {
+    margin: 0px 50px 0px 0px;
+    padding: 0px;
+    flex: 5;
+  }
+
+  div.content div.contact div.table {
+    margin: 0px 0px 100px 0px;
+    padding: 0px;
+  }
+
+  div.content div.contact div.table div.row {
+    margin: 20px 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+  }
+
+  div.content div.contact div.table div.row a.icon {
+    width: 64px;
+    height: 64px;
+    font-family: $footer-icon-font-family;
+    font-size: 64px;
+    text-decoration: none;
+    text-align: center;
+    color: $card-header-background-color;
+    filter: $small-box-filter;
+    transition: color 0.2s ease-in-out;
+  }
+
+  div.content div.contact div.table div.row a.icon:hover {
+    color: multiply-alpha($hovered-card-header-background-color, 1.25);
+  }
+
+  div.content div.contact div.table div.row a.icon.twitter::before {
+    content: "\F000";
+  }
+
+  div.content div.contact div.table div.row a.icon.youtube::before {
+    content: "\F001";
+  }
+
+  div.content div.contact div.table div.row a.icon.github::before {
+    content: "\F003";
+  }
+
+  div.content div.contact div.table div.row div.explanation {
+    margin: 0px 0px 0px 20px;
+    padding: 0px; 
+    font-size: 18px;
+    color: $other-color;
+    line-height: 1.6;
+  }
+
+  div.content div.log {
+    margin: 0px 0px 0px 50px;
+    padding: 0px;
+    flex: 4;
+  }
+
+  div.content div.log >ul {
+    margin: 0px 0px 100px 0px;
+    padding: 0px;
+    font-size: 18px;
+    color: $other-color;
+    line-height: 1.6;
+    list-style-type: none;
+  }
+
+  div.content div.log >ul span.date {
+    font-size: 80%;
+    display: block;
+  }
+
+  div.content div.log >ul li {
+    margin: 10px 0px;
+    padding: 0px;
+    display: block;
+  }
+
+  div.content div.log >ul li a {
+    color: $link-color;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+
+  div.content div.log >ul li a:hover {
+    color: $hovered-link-color;
+  }
+
+  div.content div.log >ul li ul.breadcrumb {
+    list-style-type: none;
+  }
+
+  div.content div.log >ul li ul.breadcrumb li {
+    display: inline;
+  }
+
+  div.content div.log >ul li ul.breadcrumb li::after {
+    margin: 0px 0.4em;
+    padding: 0px;
+    font-family: $list-icon-font-family;
+    font-size: 80%;
+    content: "\F003";
+  }
+
+  div.content div.log >ul li ul.breadcrumb li:last-child::after {
+    display: none;
+  }
+
+  div.content div.log >ul li ul.breadcrumb li:first-child {
+    display: none;
   }
 
 }

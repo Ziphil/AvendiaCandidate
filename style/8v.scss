@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 @function stripe-gradient($first-color, $second-color, $angle, $space) {
   @return repeating-linear-gradient($angle, $first-color $space, $second-color $space, $second-color $space * 2, $first-color $space * 2, $first-color $space * 3, $second-color $space * 3);
 }
@@ -24,7 +25,15 @@ $hovered-card-header-background-color: hsla($hovered-hue, 90%, 90%, 0.6);
 $title-color: rgba(white, 0.4);
 $caption-color: rgba(white, 0.3);
 $introduction-header-color: hsl($primary-hue, 30%, 35%);
+$other-header-color: rgba(white, 0.6);
+$explanation-color: black;
 $sample-color: rgba(white, 0.6);
+$other-color: rgba(white, 0.6);
+$link-color: hsla($secondary-hue, 100%, 90%, 0.6);
+$hovered-link-color: hsla($hovered-hue, 90%, 90%, 0.6);
+
+$introduction-header-font-size: 52px;
+$other-header-font-size: 32px;
 
 $scrollbar-thumb-border-radius: 8px;
 $card-border-radius: 10px;
@@ -44,6 +53,8 @@ $serif-font-family: "Times New Roman", "Times", "IPA P明朝", "IPAex明朝", "�
 $vekos-font-family: "Vekos Web";
 $gilit-font-family: "Gilit Web";
 $special-font-family: "Abril Fatface";
+$footer-icon-font-family: "Footer Icon";
+$list-icon-font-family: "List Icon";
 
 
 @mixin text-size-adjust {
@@ -63,6 +74,30 @@ $special-font-family: "Abril Fatface";
   flex-basis: $height;
 }
 
+
+@font-face {
+  font-family: $footer-icon-font-family;
+  src: url("../material/font/1.eot?26518935");
+  src: url("../material/font/1.eot?26518935#iefix") format("embedded-opentype"),
+       url("../material/font/1.woff2?26518935") format("woff2"),
+       url("../material/font/1.woff?26518935") format("woff"),
+       url("../material/font/1.ttf?26518935") format("truetype"),
+       url("../material/font/1.svg?26518935#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $list-icon-font-family;
+  src: url("../material/font/2.eot?16498700");
+  src: url("../material/font/2.eot?16498700#iefix") format("embedded-opentype"),
+       url("../material/font/2.woff2?16498700") format("woff2"),
+       url("../material/font/2.woff?16498700") format("woff"),
+       url("../material/font/2.ttf?16498700") format("truetype"),
+       url("../material/font/2.svg?16498700#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: $vekos-font-family;
